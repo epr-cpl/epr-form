@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPR 등록: 제품 데이터 입력 폼</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+  :root{
+    --ink:#101012;
+    --blue:#1F3864;
+    --blue-deep:#16294B;
+    --blue-tint:#E8EDF5;
+    --blue-tint-2:#D3DCEC;
+    --gray-bg:#F6F7F9;
+    --surface:#FFFFFF;
+    --surface-2:#F4F5F7;
+    --gray-border:#D9DBDE;
+    --text:#101012;
+    --text-mute:#5B5D63;
+    --yellow:#FFF2CC;
+    --yellow-text:#7F6000;
+    --green:#2E8B57;
+    --red:#C0392B;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Pretendard","Malgun Gothic",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--gray-bg); color:var(--text); line-height:1.6; font-size:16px;
+  }
+  .display{font-family:'Poppins',"Pretendard","Malgun Gothic",sans-serif;}
+  .app{max-width:760px;margin:0 auto;padding:24px 20px 80px;}
+  header.top{
+    background:var(--surface); color:var(--text); padding:22px 26px; border-radius:14px;
+    margin-bottom:18px; display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:14px; border:1px solid var(--gray-border);
+  }
+  .brand-row{display:flex; align-items:center; gap:14px;}
+  .dotgrid{display:grid; grid-template-columns:repeat(3,7px); grid-template-rows:repeat(3,7px); gap:4px;}
+  .dotgrid i{width:7px;height:7px;border-radius:50%;background:var(--blue);display:block;}
+  .dotgrid i.ink{background:var(--ink);}
+  header.top h1{font-family:'Poppins',sans-serif; font-weight:800; letter-spacing:.2px; font-size:22px; margin:0 0 3px; color:var(--text);}
+  header.top p{margin:0; font-size:14.5px; color:var(--text-mute);}
+  .company-box{
+    background:var(--surface-2); border:1px solid var(--gray-border);
+    border-radius:10px; padding:10px 14px; display:flex; align-items:center; gap:10px;
+  }
+  .company-box label{font-size:13.5px; color:var(--text-mute); white-space:nowrap; font-weight:600;}
+  .company-box input, .company-box select{
+    background:var(--surface); border:1px solid var(--gray-border); color:var(--text); border-radius:6px; padding:9px 12px; font-size:15px;
+    width:190px;
+  }
+  .country-toggle{
+    background:var(--surface); border:1px solid var(--gray-border); color:var(--text); border-radius:6px;
+    padding:9px 12px; font-size:15px; width:190px; text-align:left; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    font-family:"Pretendard","Malgun Gothic",sans-serif;
+  }
+  .country-toggle-arrow{font-size:11px; color:var(--text-mute);}
+  .country-dropdown{
+    display:none; position:absolute; top:calc(100% + 6px); left:0; z-index:80;
+    background:var(--surface); border:1px solid var(--gray-border); border-radius:10px;
+    box-shadow:0 8px 24px rgba(16,16,18,0.12); min-width:220px; max-height:280px; overflow-y:auto;
+    padding:6px;
+  }
+  .country-dropdown.open{display:block;}
+  .country-option{
+    display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:7px; cursor:pointer;
+    font-size:14.5px; color:var(--text);
+  }
+  .country-option:hover{background:var(--blue-tint);}
+  .country-option .flag{width:20px; height:14px; border-radius:2px; object-fit:cover; display:inline-block;}
+  .country-toggle .flag{width:18px; height:13px; border-radius:2px; object-fit:cover; vertical-align:middle;}
+  nav.tabs{
+    display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap;
+  }
+  nav.tabs button{
+    flex:1; min-width:120px; padding:12px 10px; border-radius:10px; border:1px solid var(--gray-border);
+    background:var(--surface); color:var(--text-mute); font-size:16px; font-weight:700; cursor:pointer;
+    transition:all .15s ease; position:relative; font-family:'Poppins',"Pretendard","Malgun Gothic",sans-serif;
+  }
+  nav.tabs button .count{
+    display:inline-block; margin-left:6px; background:var(--blue-tint-2); color:var(--ink);
+    border-radius:999px; font-size:12.5px; padding:2px 9px; font-weight:700;
+  }
+  nav.tabs button.active{background:var(--blue); color:#fff; border-color:var(--blue);}
+  nav.tabs button.active .count{background:rgba(255,255,255,0.25); color:#fff;}
+  section.panel{display:none;}
+  section.panel.active{display:block;}
+  .card{
+    background:var(--surface); border:1px solid var(--gray-border); border-radius:14px; padding:22px 24px;
+    margin-bottom:18px; box-shadow:0 1px 3px rgba(16,16,18,0.06);
+  }
+  .card h2{font-family:'Poppins',"Pretendard","Malgun Gothic",sans-serif; font-weight:700; font-size:18px; margin:0 0 6px; color:var(--text);}
+  .card .sub{font-size:14px; color:var(--text-mute); margin:0 0 18px;}
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px 20px;
+  }
+  .field label{
+    display:block; font-size:14.5px; font-weight:600; color:var(--text); margin-bottom:6px;
+  }
+  .field .hint{font-size:12.5px; color:var(--text-mute); font-weight:400; display:block; margin-top:2px;}
+  .field select, .field input[type=text], .field input[type=number]{
+    width:100%; padding:10px 12px; border:1px solid var(--gray-border); border-radius:8px;
+    font-size:15px; background:var(--surface-2); color:var(--text);
+  }
+  .field select option{ background:var(--surface-2); color:var(--text); }
+  .field input::placeholder{ color:#6C6C6A; }
+  .field select{cursor:pointer;}
+  .field select.dropdown-marker, .field.is-dropdown select{border-color:var(--blue-deep); background:var(--blue-tint); color:var(--text);}
+  .badge{
+    display:inline-block; font-size:12px; font-weight:700; padding:3px 8px; border-radius:5px;
+    margin-left:6px; vertical-align:middle;
+  }
+  .badge.dd{background:var(--blue-tint-2); color:var(--blue-deep);}
+  .badge.auto{background:var(--surface-2); color:var(--text-mute);}
+  .actions-row{display:flex; justify-content:flex-end; margin-top:16px;}
+  .btn{
+    border:none; border-radius:9px; padding:12px 20px; font-size:15px; font-weight:700;
+    cursor:pointer; transition:opacity .15s; font-family:'Poppins',"Pretendard","Malgun Gothic",sans-serif;
+  }
+  .btn:hover{opacity:.85;}
+  .btn.primary{background:var(--blue); color:#fff;}
+  .btn.ghost{background:transparent; color:var(--text); border:1px solid var(--gray-border);}
+  .btn.danger{background:transparent; color:var(--red); border:1px solid var(--red); padding:7px 12px; font-size:13.5px;}
+  .btn.small{padding:9px 16px; font-size:14.5px;}
+  #weee-table-wrap, #batt-table-wrap{overflow-x:auto;}
+  table.rows{width:100%; border-collapse:collapse; font-size:14.5px; margin-top:12px; min-width:560px;}
+  .contact-footer{
+    margin:8px 0 90px; padding:18px 22px; border-top:1px solid var(--gray-border);
+    display:flex; flex-wrap:wrap; align-items:center; gap:18px; color:var(--text-mute);
+  }
+  .contact-title{font-weight:700; font-size:14px; color:var(--text-mute);}
+  .contact-row{display:flex; align-items:center; gap:8px; font-size:14px;}
+  .contact-row span{color:var(--text-mute);}
+  .contact-row a{color:var(--blue-deep); font-weight:600; text-decoration:none;}
+  .contact-row a:hover{text-decoration:underline;}
+  table.rows th{
+    background:transparent; color:var(--text); padding:10px 10px; text-align:left; font-weight:700;
+    white-space:nowrap; border-bottom:2px solid var(--text);
+  }
+  table.rows td{padding:10px 10px; border-bottom:1px solid var(--gray-border); vertical-align:top;}
+  table.rows tr:nth-child(even) td{background:var(--surface-2);}
+  .empty-state{
+    text-align:center; padding:34px 10px; color:var(--text-mute); font-size:15px;
+    border:1.5px dashed var(--gray-border); border-radius:10px; margin-top:12px; background:var(--surface-2);
+  }
+  .legend{
+    display:flex; gap:18px; flex-wrap:wrap; font-size:13.5px; color:var(--text-mute); margin-bottom:16px;
+  }
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend i{width:12px; height:12px; border-radius:50%; display:inline-block;}
+  .legend i.dd{background:var(--blue-tint); border:1px solid var(--blue-deep);}
+  .legend i.auto{background:var(--surface-2); border:1px solid var(--gray-border);}
+  .legend i.in{background:var(--surface-2); border:1px solid var(--gray-border);}
+  footer.exportbar{
+    position:fixed; left:0; right:0; bottom:0; background:var(--surface); border-top:1px solid var(--gray-border);
+    padding:12px 20px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; z-index:50;
+  }
+  .toast{
+    position:fixed; top:18px; right:18px; background:var(--blue); color:#fff; padding:11px 18px;
+    border-radius:8px; font-size:13px; font-weight:700; box-shadow:0 6px 18px rgba(0,0,0,.25); opacity:0; transform:translateY(-8px);
+    transition:all .25s; z-index:100;
+  }
+  .toast.show{opacity:1; transform:translateY(0);}
+  .pkg-group{border:1.5px solid var(--gray-border); border-radius:10px; padding:14px 16px 16px; margin-bottom:14px; background:#fff; box-shadow:0 1px 3px rgba(16,16,18,0.05);}
+  .pkg-group h3{margin:0 0 12px; font-size:16px; color:var(--text); font-family:'Poppins',"Pretendard","Malgun Gothic",sans-serif; font-weight:700; letter-spacing:-.2px;}
+  .pkg-pair{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  @media (max-width:640px){
+    header.top{flex-direction:column; align-items:flex-start;}
+    .company-box input{width:100%;}
+    .company-box{width:100%;}
+    .actions-row{flex-direction:column; align-items:stretch;}
+    .actions-row .btn{width:100%;}
+    nav.tabs button{min-width:calc(50% - 4px);}
+  }
+  .print-only{ display:none; }
+  @media print{
+    body *{ visibility:hidden; }
+    #print-summary, #print-summary *{ visibility:visible; }
+    #print-summary{ display:block; position:absolute; left:0; top:0; width:100%; padding:20px; }
+    #print-summary h1{ font-family:'Poppins',sans-serif; font-size:20px; color:#1D1D1B; margin-bottom:2px; }
+    #print-summary .meta{ font-size:12px; color:#7A7A78; margin-bottom:18px; }
+    #print-summary h2{ font-size:14px; color:#1D1D1B; background:#EEF1FA; padding:6px 10px; margin:18px 0 8px; }
+    #print-summary table{ width:100%; border-collapse:collapse; font-size:11px; margin-bottom:10px; }
+    #print-summary th{ background:#8EA0D2; color:#1D1D1B; text-align:left; padding:5px 7px; border:1px solid #ccc; }
+    #print-summary td{ padding:5px 7px; border:1px solid #ccc; }
+    #print-summary .empty{ font-size:12px; color:#7A7A78; font-style:italic; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="app" id="main-app">
+
+  <header class="top">
+    <div class="brand-row">
+<img src="data:image/png;base64,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" alt="Avocado Communications">
+      <div>
+        <h1 id="site-title">EPR 등록: 제품 데이터 입력 폼</h1>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+      <div class="company-box" style="position:relative;">
+        <label for="countryToggle">국가</label>
+        <button type="button" id="countryToggle" class="country-toggle">선택하세요 <span class="country-toggle-arrow">▾</span></button>
+        <div id="countryDropdown" class="country-dropdown"></div>
+      </div>
+      <div class="company-box">
+        <label for="companyName">회사명 (영문)</label>
+        <input id="companyName" type="text" placeholder="예: Avocado Korea Inc.">
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="packaging" class="active">패키징 <span class="count" id="cnt-pkg">0</span></button>
+    <button data-tab="weee">WEEE <span class="count" id="cnt-weee">0</span></button>
+    <button data-tab="batteries">배터리 <span class="count" id="cnt-batt">0</span></button>
+    <button data-tab="export">내보내기</button>
+  </nav>
+
+  <!-- ===================== PACKAGING ===================== -->
+  <section class="panel active" id="panel-packaging">
+    <div class="card">
+      <h2>패키징 항목 추가</h2>
+      <p class="sub">재질을 선택하고 작년 실제 발생량과 올해 예상 발생량을 톤(t) 단위로 입력하세요.</p>
+      <div class="legend">
+        <span><i class="dd"></i> 드롭다운 선택</span>
+        <span><i class="in"></i> 직접 입력</span>
+      </div>
+      <div class="grid" id="pkg-form"></div>
+      <div class="actions-row"><button class="btn primary" id="pkg-add">+ 제품 추가</button></div>
+    </div>
+    <div class="card">
+      <h2>등록된 패키징 목록</h2>
+      <div id="pkg-table-wrap"><div class="empty-state">아직 추가된 제품이 없습니다.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== WEEE ===================== -->
+  <section class="panel" id="panel-weee">
+    <div class="card">
+      <h2>WEEE 항목 추가</h2>
+      <p class="sub">전자제품(WEEE) 한 종류당 한 행씩 추가하세요.</p>
+      <div class="legend">
+        <span><i class="dd"></i> 드롭다운 선택</span>
+        <span><i class="auto"></i> 자동/참고</span>
+        <span><i class="in"></i> 직접 입력</span>
+      </div>
+      <div class="grid" id="weee-form"></div>
+      <div class="actions-row"><button class="btn primary" id="weee-add">+ 제품 추가</button></div>
+    </div>
+    <div class="card">
+      <h2>등록된 WEEE 제품 목록</h2>
+      <div id="weee-table-wrap"><div class="empty-state">아직 추가된 제품이 없습니다.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== BATTERIES ===================== -->
+  <section class="panel" id="panel-batteries">
+    <div class="card">
+      <h2>배터리 항목 추가</h2>
+      <p class="sub">배터리가 포함된 제품 한 종류당 한 행씩 추가하세요.</p>
+      <div class="legend">
+        <span><i class="dd"></i> 드롭다운 선택</span>
+        <span><i class="auto"></i> 자동 계산</span>
+        <span><i class="in"></i> 직접 입력</span>
+      </div>
+      <div class="grid" id="batt-form"></div>
+      <div class="actions-row"><button class="btn primary" id="batt-add">+ 제품 추가</button></div>
+    </div>
+    <div class="card">
+      <h2>등록된 배터리 목록</h2>
+      <div id="batt-table-wrap"><div class="empty-state">아직 추가된 제품이 없습니다.</div></div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPORT ===================== -->
+  <section class="panel" id="panel-export">
+    <div class="card">
+      <h2>요약</h2>
+      <p class="sub">회사명: <b id="exp-company">(입력 필요)</b> · WEEE <b id="exp-weee-count">0</b>건 · 배터리 <b id="exp-batt-count">0</b>건 · 패키징 <b id="exp-pkg-status">0</b>건</p>
+    </div>
+    <div class="card">
+      <h2>진행 상황 저장 / 불러오기</h2>
+      <p class="sub">이 페이지는 새로고침하면 입력 내용이 사라져요. 작업 중간에 저장 파일을 내려받아두고, 다음에 이어서 작성할 때 불러오세요.</p>
+      <div class="actions-row" style="justify-content:flex-start; gap:10px;">
+        <button class="btn ghost small" id="save-progress">진행 상황 저장 (.json)</button>
+        <label class="btn ghost small" style="cursor:pointer; display:inline-flex; align-items:center; justify-content:center; line-height:1;">
+          <span>진행 상황 불러오기</span>
+          <input type="file" id="load-progress" accept=".json" style="display:none;">
+        </label>
+      </div>
+    </div>
+    <div class="card">
+      <h2>서류 다운로드</h2>
+      <p class="sub">입력한 내용을 파일로 추출하여 EPR 담당자에게 메일로 보내주세요.</p>
+      <div class="actions-row" style="justify-content:flex-start; gap:10px;">
+        <button class="btn primary small" id="export-xlsx">Excel로 내보내기 (.xlsx)</button>
+        <button class="btn primary small" id="export-pdf">PDF로 저장</button>
+        <button class="btn primary small" id="export-csv">CSV로 내보내기</button>
+      </div>
+      <p class="sub" style="margin-top:12px;">※ "PDF로 저장"을 누르면 인쇄 화면이 뜹니다 — 프린터 선택 목록에서 <b>"PDF로 저장"</b>(또는 "Microsoft Print to PDF")을 선택하시면 파일로 저장됩니다.</p>
+    </div>
+  </section>
+
+  <footer class="contact-footer">
+    <div class="contact-title">문의 / 담당자</div>
+    <div class="contact-row"><span>담당자</span><a href="mailto:yeri.kim@avocadocom.eu">yeri.kim@avocadocom.eu</a></div>
+    <div class="contact-row"><span>EPR 팀 문의</span><a href="mailto:epr@avocadocom.eu">epr@avocadocom.eu</a></div>
+  </footer>
+
+  <!-- 인쇄 전용 요약 화면 (평소엔 안 보이고, PDF 저장할 때만 나타납니다) -->
+  <div id="print-summary" class="print-only"></div>
+
+</div>
+
+<footer class="exportbar" id="bottom-nav">
+  <button class="btn ghost small" id="tab-prev">이전</button>
+  <button class="btn primary small" id="tab-next">다음</button>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+/* ---------------- reference data (matches the official template) ---------------- */
+const WEEE_CATEGORIES = [
+  ["_1_Temperature_exchange_equipment","1. 온도교환장비 (냉장고, 에어컨 등)"],
+  ["_2_Screens_greater_100qcm","2. 화면 100cm² 초과 (모니터, TV 등)"],
+  ["_3_Lamps","3. 램프"],
+  ["_4_Large_equipment","4. 대형장비 (세탁기 등)"],
+  ["_5_Small_equipment","5. 소형장비 (청소기, 토스터 등)"],
+  ["_6_small_ITK_equipment","6. 소형 IT/통신장비 (휴대폰, 라우터 등)"],
+];
+const YES_NO = [["Yes","예 (Yes)"],["No","아니오 (No)"]];
+const B2_TYPE = [["B2B","B2B - 전문가용 장비"],["B2C","B2C - 가정 또는 이중용도로 사용가능"]];
+
+const BATT_CATEGORY = [["Portable","Portable (휴대용)"],["Industrial","Industrial (산업용)"]];
+const BATT_TYPE = [["button cell","button cell"],["round cell/battery Pack","round cell/battery Pack"]];
+const YESNO_LOWER = [["yes","yes"],["no","no"]];
+const BATT_CHEM = [
+  "Zinc Carbon Batteries ZnC","Alkaline Manganese Batteries AlMn","Nickel Zinc Batteries NiZn",
+  "Zinc Air Batteries Zn Air","non rechargeable Lithium Batteries Lithium",
+  "rechargeable Lithium Batteries Lithium-Ion","rechargeable Lithium Batteries Lithium-Polymer",
+  "Sealed Lead Acid Batteries","Pb Nickel Cadmium Batteries","NiCd Nickel Metal Hydride Batteries NiMH",
+  "Silver Oxide Batteries AgO",
+].map(x=>[x,x]);
+
+const PKG_MATERIALS = [
+  ["glass","유리"],["paper","종이/판지"],["ferrous","철금속"],["aluminum","알루미늄"],
+  ["plastic","플라스틱"],["beverage","음료 팩포장 (예: 테트라팩)"],
+  ["composite","혼합 화합물 (음료 포장 제외)"],["other","기타 (예: 목재)"],
+];
+
+/* ---------------- state ---------------- */
+let state = {
+  company: "",
+  country: null,
+  weee: [],
+  batteries: [],
+  packaging: [], // [{material, last, next}, ...]
+};
+
+const FLAGS_B64 = {"de": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAATUlEQVR4nO3QQQ2AMADAQIZ/aVhACzggYY8uS+4UND0OAAA+jXt1wYRzdcAM0RXRFdEV0RXRlS2jx3OtTvhvy9OiK6IroiuiK6IroisvTrQC3T6jeTEAAAAASUVORK5CYII=", "fr": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAWUlEQVR4nO3OMRGAMADAwIIoBOCBCXtMqMMBeOgQlv89d1nGcY1Z731Ot8++TbfrdPkj0xXTFdMV0xXTFdMV0xXTFdMV0xXTFdMV0xXTFdMV0xXTFdMV05UPraEEtXzxDskAAAAASUVORK5CYII=", "it": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAWklEQVR4nO3OMRGAMADAwIIeBKAAN5jBDSqQBB46hOV/z12WcR1j1nve0+2z7dPtOl3+yHTFdMV0xXTFdMV0xXTFdMV0xXTFdMV0xXTFdMV0xXTFdMV0xXTlA+PCBIA3orX5AAAAAElFTkSuQmCC", "nl": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAYUlEQVR4nO3QQQ2AUBDEUBYdXLihBHN4weKi4XPoZpJWwUvrPa4trX0a8CfRVKKpRFOJphJNFYmu7p42LBd5WjSVaCrRVKKpRFNFouu8n2nDcpGnRVOJphJNJZpKNJVoqg+JywUv/45D7wAAAABJRU5ErkJggg==", "pl": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAVUlEQVR4nO3QQQ2AMADAQIYG5OBfBV6GBnh0WXKnoOmYcx67OVcH/CG6IroiuiK6IroiuiK6IroiujKe617d8NmWp0VXRFdEV0RXRFdEV0RXRFdEV16NMQR4vwMjHgAAAABJRU5ErkJggg==", "ie": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAWklEQVR4nO3OMQ2AQAAEwQcR2MELwQwaCAJxgYcvlmamv9wu232MWe/5TG/HtU9P1/nX/4iuiK6IroiuiK6IroiuiK6IroiuiK6IroiuiK6IroiuiK6IroiufFEBBBWf7P5hAAAAAElFTkSuQmCC", "be": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAVUlEQVR4nO3OsQmAABDAQHU0O/dfwB0sBCt3eCE2d30g6/LBc+7j9jrucbuNyx+ZrpiumK6YrpiumK6YrpiumK6YrpiumK6YrpiumK6YrpiumK6YrrzaogSfbQdPrwAAAABJRU5ErkJggg==", "at": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAW0lEQVR4nO3YQQ0AIAwEQYobJOBfDxqKBnhs02RXweSeF2ft0a1ZDfhJNJVoKtFUoqlEU7VER2ZWG55rubRoKtFUoqlEU4mmaokOHyYo0VSiqURTiaYSTSWa6gJpKwXp8ItFegAAAABJRU5ErkJggg==", "es": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAXElEQVR4nO3YMQ0AIBAEQR4PVPhvMIEmHKABiv18sqtgcuXFGrNVq2cDfhJNJZpKNJVoqjg7m/BeyaVFU4mmEk0lmko0lWgq0VSiqURTlUSHVy+UaCrRVKKpSqIvtukDsqRQn/UAAAAASUVORK5CYII=", "se": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAbklEQVR4nO3YwQmAMAxA0ba4pFePDuXVZZypOIFiCf0S+O8aCJ8cU8t+loC+rU+jdoQ2v2iT9k5lNMVoitEUoylGU4ymGE2p/fo7YVzKSxtNMZpiNCVl9BJ8qfis+cpoitEUoylGU4ymGE1JGX0DfP4KcwkMG1IAAAAASUVORK5CYII=", "cz": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAA/0lEQVR4nNWSwQ3CQAwEl4gGQk+hrCD6oBIK4EsnaQEelqzjRMJdzth78/PHGo0W4zS/emMAcDpf0BWHcZr1WO7XQJVyhvToJfmQ3V14f8wjhXkqeWmFOfmqNIi9V+eRwjaVrdIKW/IiaZB5F80jhWEqpaUVhuTVpZXA5NWllcDk+6UR571/HinOU2kqrTgnt5GGr7fNPFIcpmIvDeDxvJn/TDGbh/JvYwBHw18OuoJZaTdjWEl7GqN9Hs66QlPpEGO0SEcZY988AnWF6tLhxqgqzaArlJbmMUahNJUxfs6DTVfYKs1pjA1pWmN8nQezrpCX5jdGJt2FMXQevegKb5tr/R/HdefaAAAAAElFTkSuQmCC", "pt": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAAAVklEQVR4nO3OQRGAQBADQaAQhSZM4uIUIAQLPLb6NS0gmf28r23Cet6RnT8O9jSoaKVopWilaKVopWilaKVopWilaKVopWilaKVopWilaKVopWilaOUDGRwDb/JpTyAAAAAASUVORK5CYII=", "gb": "iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAIAAAAt2Q6oAAABk0lEQVR4nO2YQXKDMAxFPx4fodygXZUFF2wXvWBZsOsROARZeKIQSxhhVOPM8FaEyPbPi8PIaX7fPgEA6KcxXDQf38hi/vsBMLRddD/MnD0tzUyTO3pjaLtwiyoqgVyQDkeCA5S7hugUI/r2HBYbI1CJci440E+jpys8f6Ch7fppDCOPbMcMoh1MkFy3DFSD8oRguva4iwzVJyrfFEwBXPSa16GIco1gSuiXFaco1wsmHBglle8STHhIFFCeIZgQTItjbJXnCSZk09FIQ+VHBBMp0+IsR5QfFPyowfvXZlG0KsUVF17r8tKjsOfn0czzrCxVkg5tgmp71EZDh4AX4iVNX6FLcYUuxfWcLoXP6y3Fk33aqOGfOPt6DyjatLzeY1f0fdtD06alMenLtaY1fbBYgMU20DSJGuUq02Z9sFFfvnFyMTloLDE5CqVMWwlei85ng065bNpcMOeIcsH0/wlei87nR1L5k+kCgjkZyh+mSwpei85XhKTc4yTBHL1yd65gjka5x9mCOZvKXW2JxdUj5TeiL7Y1BFb6hgAAAABJRU5ErkJggg=="};
+
+/* ---------------- countries ----------------
+ * 국가를 추가하려면 아래 배열에 한 줄만 추가하면 됩니다. 예: 덴마크 추가
+ *   {code:"DK", flag:"🇩🇰", name:"덴마크", en:"Denmark"},
+ * code: 파일명에 붙는 국가코드 / flag: 국기 이모지 / name: 화면에 보일 한글명 / en: 영문명
+ * (카테고리 구성(WEEE·배터리·패키징)은 모든 국가에 동일하게 적용됩니다.
+ *  국가별로 실제 항목이 다르다면 별도로 요청해주세요.)
+ */
+const COUNTRIES = [
+  {code:"AT", flag:"🇦🇹", name:"오스트리아", en:"Austria"},
+  {code:"BE", flag:"🇧🇪", name:"벨기에", en:"Belgium"},
+  {code:"CZ", flag:"🇨🇿", name:"체코", en:"Czech Republic"},
+  {code:"FR", flag:"🇫🇷", name:"프랑스", en:"France"},
+  {code:"DE", flag:"🇩🇪", name:"독일", en:"Germany"},
+  {code:"IE", flag:"🇮🇪", name:"아일랜드", en:"Ireland"},
+  {code:"IT", flag:"🇮🇹", name:"이탈리아", en:"Italy"},
+  {code:"NL", flag:"🇳🇱", name:"네덜란드", en:"Netherlands"},
+  {code:"PL", flag:"🇵🇱", name:"폴란드", en:"Poland"},
+  {code:"PT", flag:"🇵🇹", name:"포르투갈", en:"Portugal"},
+  {code:"ES", flag:"🇪🇸", name:"스페인", en:"Spain"},
+  {code:"SE", flag:"🇸🇪", name:"스웨덴", en:"Sweden"},
+  {code:"GB", flag:"🇬🇧", name:"영국", en:"United Kingdom"},
+];
+
+function populateCountrySelect(){
+  const dd = document.getElementById('countryDropdown');
+  dd.innerHTML = '';
+  COUNTRIES.forEach(c=>{
+    const row = document.createElement('div');
+    row.className = 'country-option';
+    const b64 = FLAGS_B64[c.code.toLowerCase()];
+    const flagHtml = b64 ? `<img class="flag" src="data:image/png;base64,${b64}" alt="">` : '';
+    row.innerHTML = `${flagHtml}<span>${c.name} (${c.code})</span>`;
+    row.addEventListener('click', ()=>{
+      selectCountry(c);
+      dd.classList.remove('open');
+    });
+    dd.appendChild(row);
+  });
+}
+function selectCountry(c){
+  state.country = c;
+  document.getElementById('site-title').textContent = 'EPR 등록: ' + c.name + ' 제품 데이터 입력 폼';
+  const b64 = FLAGS_B64[c.code.toLowerCase()];
+  const flagHtml = b64 ? `<img class="flag" src="data:image/png;base64,${b64}" alt="">` : '';
+  document.getElementById('countryToggle').innerHTML = `${flagHtml} ${c.name} <span class="country-toggle-arrow">▾</span>`;
+}
+document.getElementById('countryToggle').addEventListener('click', (e)=>{
+  e.stopPropagation();
+  document.getElementById('countryDropdown').classList.toggle('open');
+});
+document.addEventListener('click', ()=>{
+  document.getElementById('countryDropdown').classList.remove('open');
+});
+populateCountrySelect();
+
+/* ---------------- helpers ---------------- */
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2200);
+}
+function el(tag, attrs={}, children=[]){
+  const e = document.createElement(tag);
+  for(const [k,v] of Object.entries(attrs)){
+    if(k==='class') e.className = v;
+    else if(k==='html') e.innerHTML = v;
+    else e.setAttribute(k,v);
+  }
+  children.forEach(c=>e.appendChild(c));
+  return e;
+}
+function selectField(id, labelHtml, options, badge){
+  const wrap = el('div',{class:'field is-dropdown'});
+  wrap.appendChild(el('label',{html:labelHtml + (badge? `<span class="badge dd">선택</span>`:'')}));
+  const sel = el('select',{id});
+  sel.appendChild(el('option',{value:''},[document.createTextNode('선택하세요')]));
+  options.forEach(([v,label])=>{
+    const o = el('option',{value:v});
+    o.textContent = label;
+    sel.appendChild(o);
+  });
+  wrap.appendChild(sel);
+  return wrap;
+}
+function textField(id, labelHtml, placeholder=''){
+  const wrap = el('div',{class:'field'});
+  wrap.appendChild(el('label',{html:labelHtml}));
+  wrap.appendChild(el('input',{type:'text', id, placeholder}));
+  return wrap;
+}
+function numberField(id, labelHtml, placeholder=''){
+  const wrap = el('div',{class:'field'});
+  wrap.appendChild(el('label',{html:labelHtml}));
+  wrap.appendChild(el('input',{type:'number', id, placeholder, step:'any'}));
+  return wrap;
+}
+
+/* ---------------- WEEE form ---------------- */
+function buildWeeeForm(){
+  const f = document.getElementById('weee-form');
+  f.innerHTML = '';
+  f.appendChild(textField('w-brand','브랜드(이름)','예: Samsung'));
+  f.appendChild(selectField('w-cat','제품 카테고리', WEEE_CATEGORIES, true));
+  f.appendChild(textField('w-type','제품 타입 (구체적으로)','예: 냉장고, 모니터 등'));
+  f.appendChild(selectField('w-b2','Equipment type', B2_TYPE, true));
+  f.appendChild(numberField('w-kg','판매 예측 [kg]','예: 5000'));
+  f.appendChild(selectField('w-q1','EEE 수집 지점이 있습니까?', YES_NO, true));
+  f.appendChild(selectField('w-q2','제3자에게 WEEE 회수를 위임했습니까?', YES_NO, true));
+  f.appendChild(selectField('w-q3','다른 생산자와 집합 시스템에 참여하고 있습니까?', YES_NO, true));
+}
+document.getElementById('weee-add').addEventListener('click', ()=>{
+  const brand = document.getElementById('w-brand').value.trim();
+  const cat = document.getElementById('w-cat').value;
+  if(!brand || !cat){ toast('브랜드와 제품 카테고리는 필수예요'); return; }
+  state.weee.push({
+    brand, category:cat, type:document.getElementById('w-type').value.trim(),
+    b2:document.getElementById('w-b2').value, kg:document.getElementById('w-kg').value,
+    q1:document.getElementById('w-q1').value, q2:document.getElementById('w-q2').value,
+    q3:document.getElementById('w-q3').value,
+  });
+  buildWeeeForm();
+  renderWeeeTable();
+  toast('제품이 추가되었습니다');
+});
+function renderWeeeTable(){
+  const wrap = document.getElementById('weee-table-wrap');
+  document.getElementById('cnt-weee').textContent = state.weee.length;
+  if(state.weee.length===0){ wrap.innerHTML = '<div class="empty-state">아직 추가된 제품이 없습니다.</div>'; return; }
+  const catLabel = v => (WEEE_CATEGORIES.find(c=>c[0]===v)||['',v])[1];
+  let html = '<table class="rows"><tr><th>브랜드</th><th>카테고리</th><th>타입</th><th>B2B/B2C</th><th>kg</th><th></th></tr>';
+  state.weee.forEach((r,i)=>{
+    html += `<tr><td>${r.brand}</td><td>${catLabel(r.category)}</td><td>${r.type||'-'}</td><td>${r.b2}</td><td>${r.kg||'-'}</td>
+      <td><button class="btn danger" onclick="removeWeee(${i})">삭제</button></td></tr>`;
+  });
+  html += '</table>';
+  wrap.innerHTML = html;
+}
+window.removeWeee = i => { state.weee.splice(i,1); renderWeeeTable(); };
+
+/* ---------------- Batteries form ---------------- */
+function buildBattForm(){
+  const f = document.getElementById('batt-form');
+  f.innerHTML = '';
+  f.appendChild(selectField('b-cat','카테고리', BATT_CATEGORY, true));
+  f.appendChild(textField('b-brand','배터리 브랜드','예: Energizer'));
+  f.appendChild(selectField('b-type','배터리 종류', BATT_TYPE, true));
+  f.appendChild(selectField('b-rech','재충전여부', YESNO_LOWER, true));
+  f.appendChild(selectField('b-chem','배터리 기술', BATT_CHEM, true));
+  f.appendChild(numberField('b-weight','개당 무게 [g]','예: 5'));
+  f.appendChild(numberField('b-lastyear','전년도 실제 판매량 [개]','예: 10000'));
+  f.appendChild(numberField('b-thisyear','올해 예상 매출량 [개]','예: 12000'));
+}
+document.getElementById('batt-add').addEventListener('click', ()=>{
+  const brand = document.getElementById('b-brand').value.trim();
+  const cat = document.getElementById('b-cat').value;
+  if(!brand || !cat){ toast('배터리 브랜드와 카테고리는 필수예요'); return; }
+  state.batteries.push({
+    category:cat, brand, type:document.getElementById('b-type').value,
+    rech:document.getElementById('b-rech').value, chem:document.getElementById('b-chem').value,
+    weight:document.getElementById('b-weight').value,
+    lastyear:document.getElementById('b-lastyear').value,
+    thisyear:document.getElementById('b-thisyear').value,
+  });
+  buildBattForm();
+  renderBattTable();
+  toast('배터리가 추가되었습니다');
+});
+function renderBattTable(){
+  const wrap = document.getElementById('batt-table-wrap');
+  document.getElementById('cnt-batt').textContent = state.batteries.length;
+  if(state.batteries.length===0){ wrap.innerHTML = '<div class="empty-state">아직 추가된 제품이 없습니다.</div>'; return; }
+  let html = '<table class="rows"><tr><th>카테고리</th><th>브랜드</th><th>종류</th><th>기술</th><th>무게(g)</th><th>전년(개)</th><th>올해(개)</th><th></th></tr>';
+  state.batteries.forEach((r,i)=>{
+    html += `<tr><td>${r.category}</td><td>${r.brand}</td><td>${r.type}</td><td style="max-width:180px;">${r.chem}</td><td>${r.weight||'-'}</td><td>${r.lastyear||'-'}</td><td>${r.thisyear||'-'}</td>
+      <td><button class="btn danger" onclick="removeBatt(${i})">삭제</button></td></tr>`;
+  });
+  html += '</table>';
+  wrap.innerHTML = html;
+}
+window.removeBatt = i => { state.batteries.splice(i,1); renderBattTable(); };
+
+/* ---------------- Packaging form ---------------- */
+function buildPkgForm(){
+  const f = document.getElementById('pkg-form');
+  f.innerHTML = '';
+  f.appendChild(selectField('pkg-material','재질', PKG_MATERIALS.map(([k,l])=>[k,l]), true));
+  f.appendChild(numberField('pkg-last','작년 발생 볼륨 [톤]','예: 1.5'));
+  f.appendChild(numberField('pkg-next','올해 예상 볼륨 [톤]','예: 1.8'));
+}
+document.getElementById('pkg-add').addEventListener('click', ()=>{
+  const material = document.getElementById('pkg-material').value;
+  const last = document.getElementById('pkg-last').value;
+  const next = document.getElementById('pkg-next').value;
+  if(!material){ toast('재질을 선택해주세요'); return; }
+  if(!last && !next){ toast('작년 또는 올해 볼륨을 입력해주세요'); return; }
+  state.packaging.push({material, last, next});
+  buildPkgForm();
+  renderPkgTable();
+  toast('재질이 추가되었습니다');
+});
+function renderPkgTable(){
+  const wrap = document.getElementById('pkg-table-wrap');
+  document.getElementById('cnt-pkg').textContent = state.packaging.length;
+  if(state.packaging.length===0){ wrap.innerHTML = '<div class="empty-state">아직 추가된 제품이 없습니다.</div>'; return; }
+  const matLabel = v => (PKG_MATERIALS.find(m=>m[0]===v)||['',v])[1];
+  let html = '<table class="rows"><tr><th>재질</th><th>작년(톤)</th><th>올해(톤)</th><th></th></tr>';
+  state.packaging.forEach((r,i)=>{
+    html += `<tr><td>${matLabel(r.material)}</td><td>${r.last||'-'}</td><td>${r.next||'-'}</td>
+      <td><button class="btn danger" onclick="removePkg(${i})">삭제</button></td></tr>`;
+  });
+  html += '</table>';
+  wrap.innerHTML = html;
+}
+window.removePkg = i => { state.packaging.splice(i,1); renderPkgTable(); };
+
+/* ---------------- tabs ---------------- */
+const tabButtons = document.querySelectorAll('nav.tabs button');
+const panels = document.querySelectorAll('section.panel');
+const tabOrder = ['packaging','weee','batteries','export'];
+function activateTab(name){
+  tabButtons.forEach(b=>b.classList.toggle('active', b.dataset.tab===name));
+  panels.forEach(p=>p.classList.toggle('active', p.id === 'panel-'+name));
+  if(name==='export') updateExportSummary();
+}
+tabButtons.forEach(b=>b.addEventListener('click', ()=>activateTab(b.dataset.tab)));
+document.getElementById('tab-next').addEventListener('click', ()=>{
+  const curName = [...tabButtons].find(b=>b.classList.contains('active')).dataset.tab;
+  const cur = tabOrder.indexOf(curName);
+  const next = Math.min(cur+1, tabOrder.length-1);
+  activateTab(tabOrder[next]);
+});
+document.getElementById('tab-prev').addEventListener('click', ()=>{
+  const curName = [...tabButtons].find(b=>b.classList.contains('active')).dataset.tab;
+  const cur = tabOrder.indexOf(curName);
+  const prev = Math.max(cur-1, 0);
+  activateTab(tabOrder[prev]);
+});
+
+/* ---------------- export summary ---------------- */
+function updateExportSummary(){
+  document.getElementById('exp-company').textContent = document.getElementById('companyName').value.trim() || '(입력 필요)';
+  document.getElementById('exp-weee-count').textContent = state.weee.length;
+  document.getElementById('exp-batt-count').textContent = state.batteries.length;
+  document.getElementById('exp-pkg-status').textContent = state.packaging.length;
+}
+document.getElementById('companyName').addEventListener('input', updateExportSummary);
+
+/* ---------------- save / load progress ---------------- */
+document.getElementById('save-progress').addEventListener('click', ()=>{
+  state.company = document.getElementById('companyName').value.trim();
+  const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'epr_progress_' + (state.country ? state.country.code + '_' : '') + (state.company || 'draft') + '.json';
+  a.click();
+  toast('진행 상황을 저장했어요');
+});
+document.getElementById('load-progress').addEventListener('change', (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try{
+      const loaded = JSON.parse(reader.result);
+      state = Object.assign({company:'',country:null,weee:[],batteries:[],packaging:[]}, loaded);
+      document.getElementById('companyName').value = state.company || '';
+      if(state.country){ selectCountry(state.country); }
+      renderWeeeTable(); renderBattTable(); renderPkgTable(); buildPkgForm(); updateExportSummary();
+      toast('불러왔습니다');
+    }catch(err){ toast('파일을 읽을 수 없어요'); }
+  };
+  reader.readAsText(file);
+});
+
+/* ---------------- CSV / XLSX export ---------------- */
+function weeeRows(){
+  return state.weee.map(r=>({
+    "Company name": document.getElementById('companyName').value.trim(),
+    "브랜드(이름)": r.brand,
+    "제품 카테고리": r.category,
+    "제품 타입": r.type,
+    "Equipment type": r.b2,
+    "판매 예측 [kg]": r.kg,
+    "EEE 수집 지점 존재 여부": r.q1,
+    "제3자 WEEE 회수 위임 여부": r.q2,
+    "집합 시스템 참여 여부": r.q3,
+  }));
+}
+function battRows(){
+  return state.batteries.map(r=>({
+    "Company name": document.getElementById('companyName').value.trim(),
+    "카테고리": r.category,
+    "배터리 브랜드": r.brand,
+    "배터리 종류": r.type,
+    "재충전여부": r.rech,
+    "배터리 기술": r.chem,
+    "개당 무게[g]": r.weight,
+    "전년도 실제 판매량[개]": r.lastyear,
+    "올해 예상 매출량[개]": r.thisyear,
+  }));
+}
+function pkgRows(){
+  const company = document.getElementById('companyName').value.trim();
+  const matLabel = v => (PKG_MATERIALS.find(m=>m[0]===v)||['',v])[1];
+  return state.packaging.map(r=>({
+    "Company name": company,
+    "재질": matLabel(r.material),
+    "작년 발생 볼륨[톤]": r.last || '',
+    "올해 예상 볼륨[톤]": r.next || '',
+  }));
+}
+function toCSV(rows){
+  if(rows.length===0) return '';
+  const headers = Object.keys(rows[0]);
+  const lines = [headers.join(',')];
+  rows.forEach(r=>{
+    lines.push(headers.map(h=>`"${String(r[h]??'').replace(/"/g,'""')}"`).join(','));
+  });
+  return lines.join('\n');
+}
+document.getElementById('export-csv').addEventListener('click', ()=>{
+  const sections = [['WEEE', weeeRows()], ['Batteries', battRows()], ['Packaging', pkgRows()]];
+  let combined = '';
+  sections.forEach(([name, rows])=>{
+    combined += `# ${name}\n` + (rows.length ? toCSV(rows) : '(no data)') + '\n\n';
+  });
+  const blob = new Blob([combined], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'epr_data_' + (state.country ? state.country.code + '_' : '') + (document.getElementById('companyName').value.trim()||'draft') + '.csv';
+  a.click();
+  toast('CSV로 내보냈어요');
+});
+document.getElementById('export-xlsx').addEventListener('click', ()=>{
+  const wb = XLSX.utils.book_new();
+  const w = weeeRows(), b = battRows(), p = pkgRows();
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(w.length?w:[{"안내":"WEEE 데이터가 없습니다"}]), "WEEE");
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(b.length?b:[{"안내":"배터리 데이터가 없습니다"}]), "Batteries");
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(p.length?p:[{"안내":"패키징 데이터가 없습니다"}]), "Packaging");
+  XLSX.writeFile(wb, 'epr_data_' + (state.country ? state.country.code + '_' : '') + (document.getElementById('companyName').value.trim()||'draft') + '.xlsx');
+  toast('Excel로 내보냈어요');
+});
+
+/* ---------------- PDF 인쇄 저장 (서버 없이 브라우저 인쇄 기능으로 생성) ---------------- */
+function escapeHtml_(s){
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function buildPrintSummary(){
+  const company = document.getElementById('companyName').value.trim() || '(회사명 미입력)';
+  const today = new Date().toLocaleDateString('ko-KR');
+  let html = `<h1>${state.country ? state.country.name + ' ' : ''}EPR 등록 데이터</h1><div class="meta">회사명: ${escapeHtml_(company)} · 생성일: ${today}</div>`;
+
+  html += '<h2>WEEE 제품 (' + state.weee.length + '건)</h2>';
+  if(state.weee.length){
+    html += '<table><tr><th>브랜드</th><th>카테고리</th><th>타입</th><th>B2B/B2C</th><th>kg</th></tr>';
+    state.weee.forEach(r=>{
+      const catLabel = (WEEE_CATEGORIES.find(c=>c[0]===r.category)||['',r.category])[1];
+      html += `<tr><td>${escapeHtml_(r.brand)}</td><td>${escapeHtml_(catLabel)}</td><td>${escapeHtml_(r.type)}</td><td>${escapeHtml_(r.b2)}</td><td>${escapeHtml_(r.kg)}</td></tr>`;
+    });
+    html += '</table>';
+  } else {
+    html += '<p class="empty">등록된 WEEE 제품이 없습니다.</p>';
+  }
+
+  html += '<h2>배터리 (' + state.batteries.length + '건)</h2>';
+  if(state.batteries.length){
+    html += '<table><tr><th>카테고리</th><th>브랜드</th><th>종류</th><th>기술</th><th>무게(g)</th><th>전년(개)</th><th>올해(개)</th></tr>';
+    state.batteries.forEach(r=>{
+      html += `<tr><td>${escapeHtml_(r.category)}</td><td>${escapeHtml_(r.brand)}</td><td>${escapeHtml_(r.type)}</td><td>${escapeHtml_(r.chem)}</td><td>${escapeHtml_(r.weight)}</td><td>${escapeHtml_(r.lastyear)}</td><td>${escapeHtml_(r.thisyear)}</td></tr>`;
+    });
+    html += '</table>';
+  } else {
+    html += '<p class="empty">등록된 배터리가 없습니다.</p>';
+  }
+
+  html += '<h2>패키징</h2>';
+  if(state.packaging.length){
+    const matLabel = v => (PKG_MATERIALS.find(m=>m[0]===v)||['',v])[1];
+    html += '<table><tr><th>재질</th><th>작년(톤)</th><th>올해(톤)</th></tr>';
+    state.packaging.forEach(r=>{
+      html += `<tr><td>${escapeHtml_(matLabel(r.material))}</td><td>${escapeHtml_(r.last)}</td><td>${escapeHtml_(r.next)}</td></tr>`;
+    });
+    html += '</table>';
+  } else {
+    html += '<p class="empty">입력된 패키징 데이터가 없습니다.</p>';
+  }
+
+  document.getElementById('print-summary').innerHTML = html;
+}
+document.getElementById('export-pdf').addEventListener('click', ()=>{
+  buildPrintSummary();
+  setTimeout(()=>window.print(), 50);
+});
+
+/* ---------------- init ---------------- */
+buildWeeeForm();
+buildBattForm();
+buildPkgForm();
+renderWeeeTable();
+renderBattTable();
+renderPkgTable();
+updateExportSummary();
+</script>
+</body>
+</html>
