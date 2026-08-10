@@ -287,7 +287,16 @@
 
  <div class="card company-name-card">
 
-  <!-- 아코디언 헤더 -->
+ <div class="card company-name-card">
+
+  <!-- 아코디언 헤더: 가운데 정렬 -->
+  <button type="button" id="companyInfoToggle" class="company-info-toggle">
+    ▾ 회사 상세정보 입력
+  </button>
+
+<div class="card company-name-card">
+
+  <!-- 아코디언 헤더: 가운데 정렬 -->
   <button type="button" id="companyInfoToggle" class="company-info-toggle">
     ▾ 회사 상세정보 입력
   </button>
@@ -300,12 +309,11 @@
     </label>
     <input id="companyName" type="text" placeholder="예: Avocado Korea Inc." class="company-name-input">
     <p class="sub" style="margin:8px 0 0;">
-      ※ 위임장(Power of Attorney) 등 등록 서류 작성에 사용되는 이름이에요. 법인 등기상 영문 명칭을 정확히 입력해주세요.
+      ※ 법인 등기상 영문 명칭을 정확히 입력해주세요.
     </p>
 
     <div class="card">
       <h2>회사 기본 정보</h2>
-      <p class="sub">등록 서류(위임장 등)에 사용될 회사 기본 정보를 입력하세요.</p>
       <div class="grid" id="company-basic-form"></div>
     </div>
 
@@ -330,6 +338,9 @@
       <p class="sub">LUCID 번호, ADEME UIN 등 이미 보유한 등록번호가 있다면 입력하세요.</p>
       <div class="grid" id="company-regno-form"></div>
     </div>
+
+  </div>
+</div>
 
   </div>
 </div>
