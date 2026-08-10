@@ -283,37 +283,54 @@
 
   <div id="countryNote" class="country-note" style="display:none;"></div>
 
-  <div class="card company-name-card">
-    <label for="companyName" class="company-name-label">회사명 (영문) <span style="color:var(--red);">*</span></label>
+<div class="card company-name-card">
+
+  <!-- 아코디언 헤더: 안내 문구만 노출 -->
+  <button type="button" id="companyInfoToggle" class="company-info-toggle">
+    ▾ 회사 정보를 입력해주세요
+  </button>
+
+  <!-- 아코디언 바디: 회사명 입력 + 상세정보 전부 포함 -->
+  <div id="companyInfoBody" class="company-info-body" style="display:none">
+
+    <label for="companyName" class="company-name-label">
+      회사명 (영문) <span style="color:var(--red);">*</span>
+    </label>
     <input id="companyName" type="text" placeholder="예: Avocado Korea Inc." class="company-name-input">
-    <p class="sub" style="margin:8px 0 0;">※ 위임장(Power of Attorney) 등 등록 서류 작성에 사용되는 이름이에요. 법인 등기상 영문 명칭을 정확히 입력해주세요.</p>
-    <button type="button" id="companyInfoToggle" class="company-info-toggle">▾ 회사 상세정보 입력 (위임장 작성용)</button>
-    <div id="companyInfoBody" class="company-info-body" style="display:none">
+    <p class="sub" style="margin:8px 0 0;">
+      ※ 위임장(Power of Attorney) 등 등록 서류 작성에 사용되는 이름이에요. 법인 등기상 영문 명칭을 정확히 입력해주세요.
+    </p>
+
     <div class="card">
       <h2>회사 기본 정보</h2>
       <p class="sub">등록 서류(위임장 등)에 사용될 회사 기본 정보를 입력하세요.</p>
       <div class="grid" id="company-basic-form"></div>
     </div>
+
     <div class="card">
       <h2>은행 정보 <span style="font-weight:400; font-size:12.5px; color:var(--text-mute);">(배터리 등록 시 필수)</span></h2>
       <div class="grid" id="company-bank-form"></div>
     </div>
+
     <div class="card">
       <h2>대표자 정보</h2>
       <div class="grid" id="company-rep-form"></div>
     </div>
+
     <div class="card">
       <h2>판매 채널</h2>
       <p class="sub">해당하는 채널의 URL을 입력하세요. 없는 채널은 비워두면 됩니다.</p>
       <div class="grid" id="company-channel-form"></div>
     </div>
+
     <div class="card">
       <h2>기존 등록번호 <span style="font-weight:400; font-size:12.5px; color:var(--text-mute);">(갱신/재신고인 경우)</span></h2>
       <p class="sub">LUCID 번호, ADEME UIN 등 이미 보유한 등록번호가 있다면 입력하세요.</p>
       <div class="grid" id="company-regno-form"></div>
     </div>
-    </div>
+
   </div>
+</div>
 
   <!-- ===================== 작성 가이드 · FAQ 페이지 ===================== -->
   <div id="guidePage" class="guide-page">
